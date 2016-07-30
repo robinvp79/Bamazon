@@ -148,12 +148,9 @@ function addNewProduct(){
 		if (err) {
 			throw err;
 		}
-		console.log(results);
-		console.log(newProduct);
 		results.forEach(function(row){
 			newProduct[1].choices.push(row.departmentName);
 		});
-		console.log(newProduct);
 		addProductDetails();
 	});
 };

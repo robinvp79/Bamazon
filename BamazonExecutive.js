@@ -58,7 +58,7 @@ function showSalesByDepartment(){
 			throw err;
 		}
 	    res.forEach(function(row){
-	    	var profit = parseFloat(row.totalSales)-parseFloat(row.overHeadCosts);
+	    	var profit = (parseFloat(row.totalSales)-parseFloat(row.overHeadCosts)).toFixed(2);
 	        table.push([row.departmentID, row.departmentName, row.overHeadCosts, row.totalSales, profit]);
 	    });
 	    console.log(table.toString());
